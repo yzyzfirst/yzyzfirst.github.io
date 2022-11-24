@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="echarts.js"></script>
+  </head>
+  <body>
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+          text: '全国主要城市二手房数量'
+        },
+        tooltip: {},
+        legend: {
+          data: ['二手房数量']
+        },
+        xAxis: {
+          data: ['北京', '合肥', '重庆', '沈阳', '上海', '郑州','天津']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '二手房（套）',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20,545]
+          }
+        ]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
